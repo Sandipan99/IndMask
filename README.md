@@ -18,6 +18,8 @@ We also go beyond recurrent neural networks and deploy **IndMask** to transforme
 The effectiveness of **IndMask** is further demonstrated through experiments over real-world datasets and time series classification and forecasting tasks.
 It is also computationally efficient and can be deployed in conjunction with any time series model.
 
-<p align="center"><img src="./IDG.png" width="400" height="400"></p>
+<p align="center"><img src="./IndMask.png" width="900" height="200"></p>
+
+Consider a multivariate time series $X$ with $d_i$ variables and $t_i$ time states. Also provided is a black-box time series classifier model $g_{\theta}$ which takes $X$ as input and predicts a class $y$. The goal is to generate an explanation for the decision in terms of a mask of the same dimension as the input. The model uses a neural network $h_{\psi}$ to predict latent variables, which are then used to sample a mask. The mask is then used to obtain a perturbed input $X_s$ which in turn is used as input to $g_{\theta}$ to obtain $y_s$ as output. $\psi$ is optimized by minimizing the cross entropy between $y$ and $y_s$.
 
 ## Requirements
