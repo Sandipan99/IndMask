@@ -22,4 +22,28 @@ It is also computationally efficient and can be deployed in conjunction with any
 
 Consider a multivariate time series $X$ with $d_i$ variables and $t_i$ time states. Also provided is a black-box time series classifier model $g_{\theta}$ which takes $X$ as input and predicts a class $y$. The goal is to generate an explanation for the decision in terms of a mask of the same dimension as the input. The model uses a neural network $h_{\psi}$ to predict latent variables, which are then used to sample a mask. The mask is then used to obtain a perturbed input $X_s$ which in turn is used as input to $g_{\theta}$ to obtain $y_s$ as output. $\psi$ is optimized by minimizing the cross entropy between $y$ and $y_s$.
 
-## Requirements
+## Running the code
+~~~
+pip install requirements.txt
+~~~
+
+> The black-box models are available in Models/HAR and Models/MIMIC
+
+> MIMIC-III is a private dataset. For the following, you need to have the MIMIC-III database running on a local server. For more information, please refer to the official MIMIC-III documentation.
+
+> Once you have downloaded and pre-processed the dataset, you can put it in the folder *Datasets/MIMIC/*. Save the data in two pickle files - *inputs.pkl* which contains the features as tensors and *true_labels.pkl* as tensors
+> A dummy dataset is provided in the MIMIC folder
+
+To replicate results in the paper run -
+
+~~~
+python main.py -d HAR -l local # local explanations HAR
+~~~
+~~~
+python main.py -d HAR -l global # Inductive experiments HAR
+~~~
+~~~
+python main.py -d MIMIC -l local # local explanations MIMIC
+~~~
+
+
