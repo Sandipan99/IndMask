@@ -6,7 +6,21 @@ Implementation of IndMask, an inductive explanation method for multivariate time
  ***Please cite our paper in any published work that uses any of these resources.***
 
  ~~~
- Coming soon
+ @inproceedings{DBLP:conf/ecai/NasrS24,
+  author       = {Seham Nasr and
+                  Sandipan Sikdar},
+  title        = {IndMask: Inductive Explanation for Multivariate Time Series Black-Box
+                  Models},
+  booktitle    = {{ECAI} 2024 - 27th European Conference on Artificial Intelligence,
+                  19-24 October 2024, Santiago de Compostela, Spain},
+  series       = {Frontiers in Artificial Intelligence and Applications},
+  volume       = {392},
+  pages        = {1108--1115},
+  publisher    = {{IOS} Press},
+  year         = {2024},
+  url          = {https://doi.org/10.3233/FAIA240603},
+  doi          = {10.3233/FAIA240603}
+}
  ~~~
 
 ## Abstract
